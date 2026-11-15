@@ -1,4 +1,4 @@
-# Love Added Bakery
+# Mayuna Pâtisserie
 
 A lightweight static bakery website built with plain HTML, CSS, and JavaScript.
 
