@@ -374,8 +374,8 @@ h1 {
 .mini-card {
   padding: 22px 20px;
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 250, 243, 0.84), rgba(245, 237, 225, 0.72));
-  border: 1px solid rgba(125, 85, 59, 0.1);
+  background: linear-gradient(135deg, var(--surface-strong), var(--accent-soft));
+  border: 1px solid var(--line);
 }
 
 .mini-number {
@@ -392,7 +392,11 @@ h1 {
   grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
   gap: 32px;
   align-items: center;
-  padding: 18px 0 34px;
+  padding: 18px clamp(20px, 3vw, 36px) 34px;
+}
+
+.highlights > article + article {
+  padding-inline-start: 12px;
 }
 
 .highlights h2,
@@ -499,8 +503,15 @@ h1 {
 }
 
 .section-heading {
-  max-width: 44rem;
+  max-width: 100%;
   margin-bottom: 24px;
+  padding-inline: clamp(20px, 3vw, 36px);
+}
+
+@media (min-width: 981px) {
+  .section-heading h2 {
+    white-space: nowrap;
+  }
 }
 
 .menu-layout {
@@ -687,6 +698,10 @@ h1 {
 }
 
 @media (max-width: 980px) {
+  .highlights > article + article {
+    padding-inline-start: 0;
+  }
+
   .hero,
   .highlights,
   .menu-layout,
